@@ -1,0 +1,21 @@
+{
+    "name": "GPT Scroller",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Scrapes user messages from ChatGpt and scroll page to that part when click on particlar message",
+    "permissions": ["scripting", "activeTab"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://chatgpt.com/c/*"],
+            "js": ["content.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "host_permissions": ["<all_urls>"]
+}
