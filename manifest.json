@@ -2,7 +2,7 @@
     "name": "GPT Scroller",
     "version": "1.0",
     "manifest_version": 3,
-    "description": "Scrapes user messages from ChatGpt and scroll page to that part when click on particlar message",
+    "description": "Scrapes user messages from Ai Tools (ChatGpt/Gemini/Claude) and scroll page to that part when click on particlar message",
     "permissions": ["scripting", "activeTab"],
     "action": {
         "default_popup": "popup.html"
