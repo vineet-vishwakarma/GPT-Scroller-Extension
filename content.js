@@ -1,13 +1,19 @@
 function collectUserMessages() {
   let userMessages = [];
 
-  if (location.hostname.includes("chatgpt.com")) {
-    userMessages = Array.from(document.querySelectorAll('.whitespace-pre-wrap'));
-  } else if (location.hostname.includes("claude.ai")) {
-    userMessages = Array.from(document.querySelectorAll('.font-user-message'));
-  } else if (location.hostname.includes("gemini.google.com")) {
-    userMessages = Array.from(document.querySelectorAll('.query-text'));
-  }
+  const hostNameMap = new Map([
+    ["chatgpt.com", ".whitespace-pre-wrap"],
+    ["claude.ai", ".font-user-message"],
+    ["gemini.google.com", ".query-text"],
+    ["perplexity.ai", ".whitespace-pre-line"],
+    ["chat.deepseek.com", ".fbb737a4"]
+  ]);
+
+  hostNameMap.forEach((selector, host) => {
+    if (location.hostname.includes(host)) {
+      userMessages = Array.from(document.querySelectorAll(selector));
+    }
+  });
 
   return userMessages.map((el, i) => {
     if (!el.id) el.id = `gpt-user-msg-${i}`;
