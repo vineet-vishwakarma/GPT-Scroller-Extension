@@ -6,6 +6,9 @@ Tired of endlessly scrolling through ChatGPT conversations to revisit old respon
 
 While preparing for an exam using ChatGPT, I found it really inconvenient to keep scrolling up just to read previous responses. I searched for an existing extension but couldn’t find one that solved this in a clean way — so I built my own!
 
+## 🎥Demo
+https://github.com/user-attachments/assets/835c1b54-0850-4b91-bd95-6844b0094181
+
 ## 🛠️ Installation
 
 > Currently a developer tool. For personal/local use only (manual installation)
